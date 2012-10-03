@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=UnifrakturCook:700);
+
 /* ==========================================================================
    Base
    ========================================================================== */
@@ -14,7 +16,9 @@ body { }
 
 /* Fixed Topbar Navigation */
 body.top-navbar { padding-top: 60px; }
-body.admin-bar .navbar-fixed-top { top: 28px; }
+body.admin-bar .navbar-fixed-top { top: 0px; }
+
+.navbar .brand {font-family: 'UnifrakturCook', sans-serif; font-size: 2em;}
 
 
 
@@ -83,4 +87,31 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
   body.top-navbar {
     padding-top: 0;
   }
+}
+
+
+html body.admin-bar {
+    margin-top: -28px !important;
+}
+#wpadminbar{
+        margin-top: -20px;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  z-index: 9999;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+  background-image: -webkit-linear-gradient(bottom,green,#464646 5px);
+  background-image: -moz-linear-gradient(bottom,green,#464646 5px);
+  background-image: -o-linear-gradient(bottom,green,#464646 5px);
+  background-image: -ms-linear-gradient(bottom,green,#464646 5px);
+  background-image:linear-gradient(bottom,green,#464646 5px);
+}
+
+#wpadminbar:hover{
+        opacity: .85;
+        margin-top: 0;
 }
