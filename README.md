@@ -13,7 +13,7 @@ Edit `lib/config.php` to enable support for major functionality and to define co
 
 ## Documentation
 
-Take a look at the [documentation table of contents](/retlehs/roots/blob/master/doc/README.md).
+Take a look at the [documentation table of contents](/retlehs/roots/blob/master/doc/TOC.md).
 
 ## Features
 
@@ -30,11 +30,11 @@ Take a look at the [documentation table of contents](/retlehs/roots/blob/master/
 
 ## Contributing
 
-Everyone is welcome to help improve this project. There are several ways you can contribute:
+Everyone is welcome to help [contribute](/retlehs/roots/blob/master/CONTRIBUTING.md) and improve this project. There are several ways you can contribute:
 
 * Reporting issues (please read [issue guidelines](https://github.com/necolas/issue-guidelines))
 * Suggesting new features
-* Writing or editing [docs](/retlehs/roots/blob/master/doc/README.md)
+* Writing or editing [docs](/retlehs/roots/blob/master/doc/TOC.md)
 * Writing or refactoring code
 * Fixing [issues](https://github.com/retlehs/roots/issues)
 * Replying to questions on the [mailing list](http://groups.google.com/group/roots-theme)
