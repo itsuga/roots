@@ -6,7 +6,9 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php while (have_posts()) : the_post(); ?>
+<?php while (have_posts()) : the_post();
+  get_template_part( 'acat/format', get_post_format() );
+/* ?>
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
       <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -19,7 +21,8 @@
       <?php the_tags('<ul class="entry-tags"><li>','</li><li>','</li></ul>'); ?>
     </footer>
   </article>
-<?php endwhile; ?>
+<?php */
+endwhile; ?>
 
 <?php if ($wp_query->max_num_pages > 1) : ?>
   <nav id="post-nav" class="pager">
