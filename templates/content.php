@@ -8,6 +8,7 @@ if (!have_posts()) : ?>
   get_search_form();
 endif;
 
+
 if( get_post_type() == 'movie') echo '<div class="row-fluid">';
 
 while (have_posts()) : the_post();
