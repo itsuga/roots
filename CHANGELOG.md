@@ -1,4 +1,12 @@
 ### HEAD
+* Use `entry-summary` class for excerpts per Readability's Article Publishing Guidelines
+* Cleanup/refactor `lib/activation.php`
+* Remove `lib/post-types.php` and `lib/metaboxes.php`
+* Make sure Primary Navigation menu always gets created and has the location set upon activation, update activation permalink method
+* Update to Bootstrap 2.2.1
+* Update conditional feed method
+* Update to Bootstrap 2.2.0
+* Return instead of echo class names in `roots_main_class` and `roots_sidebar_class`
 * Move nav customizations into `lib/nav.php`
 
 ### 6.1.0: October 2nd, 2012
