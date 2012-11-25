@@ -115,3 +115,6 @@ html body.admin-bar {
         opacity: .85;
         margin-top: 0;
 }
+
+.text-right {text-align: right;}
+.font-smaller, .text-smaller blockquote {font-size: .90em;}

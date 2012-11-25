@@ -1,21 +1,29 @@
 <?php
 // format-link.php
 // the link format
+
+$the_link_url = (get_post_meta($post->ID, '_format_link_url', true)!='') ? get_post_meta($post->ID, '_format_link_url', true) : '#'; 
+$btn_size = (is_single() ) ? 'btn-large' : '' ;
+$posttags = get_the_tags();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
-  <div class="span12">
-    <?php $the_link_url = (get_post_meta($post->ID, '_format_link_url', true)!='') ? get_post_meta($post->ID, '_format_link_url', true) : '#'; ?>
-    <p><a href="<?php echo $the_link_url; ?>" class="btn btn-large btn-block pagination-left"><i class="icon-share-alt"></i> <?php the_title(); ?></a></p>
-    <p>
-        <a href="<?php the_permalink();?>">&#8734;</a>
-        <?php 
-        $posttags = get_the_tags();
-        if ($posttags) :
-            foreach($posttags as $tag) echo '<a class="label" href="'.get_tag_link($tag->term_id).'">'.$tag->name . '</a> ';
-        endif; 
-        ?>
-    </p>
-    <hr/>
-  </div>
-</article> 
+    <div class="span8">
+        <a href="<?php echo $the_link_url; ?>" class="btn <?php echo $btn_size; ?> btn-block" style="text-align:left;padding-left:1em;">
+            <?php the_title(); ?>
+        </a>
+    </div>
+    <div class="span2 offset1">
+        <p class="text-right">
+            <?php if ($posttags) : ?>
+                <?php foreach($posttags as $tag) echo '<a class="label" href="'.get_tag_link($tag->term_id).'">'.$tag->name . '</a> '; ?>
+            <?php endif; ?>
+        </p>
+    </div>
+    <div class="span1">
+        <a href="<?php the_permalink();?>" title="&#8734; permalink">
+            <span class="badge"><i class="icon-white icon-share-alt "></i></span>
+        </a>
+    </div>
+</article>
+<hr>

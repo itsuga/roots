@@ -1,32 +1,26 @@
-<?php if (!have_posts()) : ?>
+<?php 
+if (!have_posts()) : ?>
   <div class="alert alert-block fade in">
     <a class="close" data-dismiss="alert">&times;</a>
     <p><?php _e('Sorry, no results were found.', 'roots'); ?></p>
   </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
+  <?php 
+  get_search_form();
+endif;
 
-<?php while (have_posts()) : the_post();
-  get_template_part( 'acat/format', get_post_format() );
-/* ?>
-  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header>
-      <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-      <?php get_template_part('templates/entry-meta'); ?>
-    </header>
-    <div class="entry-content">
-      <?php the_excerpt(); ?>
-    </div>
-    <footer>
-      <?php the_tags('<ul class="entry-tags"><li>','</li><li>','</li></ul>'); ?>
-    </footer>
-  </article>
-<?php */
-endwhile; ?>
+if( get_post_type() == 'movie') echo '<div class="row-fluid">';
 
-<?php if ($wp_query->max_num_pages > 1) : ?>
+while (have_posts()) : the_post();
+  if( get_post_type() == 'movie') get_template_part( 'acat/movie', get_post_format() );
+  else get_template_part( 'acat/format', get_post_format() );
+endwhile;
+
+if( get_post_type() == 'movie') echo '</div>';
+
+if ($wp_query->max_num_pages > 1) : ?>
   <nav id="post-nav" class="pager">
     <div class="previous"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></div>
     <div class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></div>
   </nav>
-<?php endif; ?>
+<?php 
+endif; ?>

@@ -1,3 +1,4 @@
+<h1>movie</h1>
 <?php 
 while (have_posts()) : the_post();
  get_template_part( 'acat/format', get_post_format() );

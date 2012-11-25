@@ -9,16 +9,15 @@
         </header>
         <div class="entry-content">
           <?php 
-  if ( has_post_thumbnail() ) {
-    the_post_thumbnail();
-  }
+  if ( has_post_thumbnail() )   the_post_thumbnail();
 
-  if (is_archive() || is_search()) { ?>
-            <?php the_excerpt(); ?>
-          <?php } else { ?>
-            <?php the_content(); ?>
-            <?php get_template_part('templates/entry-meta'); ?>
-          <?php } ?>
+  if (is_archive() || is_search()):
+    the_excerpt();
+  else:
+    the_content();
+    get_template_part('templates/entry-meta');
+  endif;
+  ?>
 
         </div>
         
