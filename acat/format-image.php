@@ -48,10 +48,11 @@ $posttags = get_the_tags();
             <?php endif; ?>
         </p>
     </div>
-	<div class="span1">
+	<div class="span1 text-right">
 		<a href="<?php the_permalink();?>" title="&#8734; permalink">
 			<span class="badge"><i class="icon-picture icon-white"></i></span>
 		</a>
+                <?php edit_post_link('<i class="icon-pencil"></i>'); ?>
 	</div>
 </article>
 <hr>
