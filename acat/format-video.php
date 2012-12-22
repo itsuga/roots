@@ -9,7 +9,7 @@ $posttags = get_the_tags();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
     <div class="span9">
-        <?php if ($the_video_embed!='') echo $the_video_embed; ?>
+        <?php if ($the_video_embed!='') echo $the_video_embed.'<br/>'; ?>
         <a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
         <?php the_content(); ?>
     </div>
