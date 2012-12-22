@@ -12,6 +12,8 @@ $posttags = get_the_tags();
         <a href="<?php echo $the_link_url; ?>" class="btn <?php echo $btn_size; ?> btn-block" style="text-align:left;padding-left:1em;">
             <?php the_title(); ?>
         </a>
+        <br/>
+        <?php the_content(); ?>
     </div>
     <div class="span2 offset1">
         <p class="text-right">
