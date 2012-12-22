@@ -1,26 +1,29 @@
 <?php
 // format-video.php
 // the video format
+
+$the_video_embed = (get_post_meta($post->ID, '_format_video_embed', true)!='') ? get_post_meta($post->ID, '_format_video_embed', true) : '';
+$btn_size = (is_single() ) ? 'btn-large' : '' ;
+$posttags = get_the_tags();
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
-	<div class="span12">
-		<?php the_content(); ?>
-		<p>
-			<i class="icon-film"></i> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-
-		  	<?php
-		  	$video_embed = (get_post_meta($post->ID, '_format_video_embed', true)!='') ? get_post_meta($post->ID, '_format_video_embed', true) : '';
-			if ($video_embed!='') echo '<br/><a href="'.$video_embed.'"><span class="muted">'.$video_embed.'</span></a>';
-			?>
-		</p>
-
-		<?php 
-		$posttags = get_the_tags();
-		if ($posttags) : ?>
-		<p>
-			<?php foreach($posttags as $tag) echo '<a class="label" href="'.get_tag_link($tag->term_id).'">'.$tag->name . '</a> '; ?>
-		</p>
-		<?php endif; ?>
-		<hr/>
-	</div>
+    <div class="span9">
+        <?php if ($the_video_embed!='') echo $the_video_embed; ?>
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
+        <?php the_content(); ?>
+    </div>
+    <div class="span2">
+        <p class="text-right">
+            <?php if ($posttags) : ?>
+                <?php foreach($posttags as $tag) echo '<a class="label" href="'.get_tag_link($tag->term_id).'">'.$tag->name . '</a> '; ?>
+            <?php endif; ?>
+        </p>
+    </div>
+    <div class="span1">
+        <a href="<?php the_permalink();?>" title="&#8734; permalink">
+            <span class="badge"><i class="icon-white icon-film "></i></span>
+        </a>
+    </div>
 </article>
+<hr>
