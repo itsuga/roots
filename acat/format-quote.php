@@ -2,7 +2,7 @@
 // format-quote.php
 // the quote format
 
-$the_quote_url = (get_post_meta($post->ID, '_format_quote_url', true)!='') ? get_post_meta($post->ID, '_format_quote_url', true) : ''; 
+$the_quote_source_url = (get_post_meta($post->ID, '_format_quote_source_url', true)!='') ? get_post_meta($post->ID, '_format_quote_source_url', true) : ''; 
 $the_quote_source_name = (get_post_meta($post->ID, '_format_quote_source_name', true)!='') ? get_post_meta($post->ID, '_format_quote_source_name', true) : ''; 
 
 $text_size = (is_single() ) ? 'large' : '' ;
@@ -13,7 +13,12 @@ $posttags = get_the_tags();
     <div class="span7">
         <blockquote>
             <?php the_content(); ?>
-            <small><?php echo $the_quote_url;?><cite title="Source Title"><?php echo $the_quote_title;?></cite></small>
+            <small><cite title="Source Title">
+                <?php
+                if ($the_quote_source_url!='') echo '<a href="'.$the_quote_source_url.'" class="muted">';
+                echo $the_quote_source_name;
+                if ($the_quote_source_url!='') echo '</a>';
+                ?></cite></small>
         </blockquote>
     </div>
     <div class="span4   ">
