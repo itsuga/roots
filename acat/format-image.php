@@ -37,6 +37,7 @@ $posttags = get_the_tags();
 		<a href="<?php the_permalink(); ?>">
 			<img class="media-object" src="<?php echo $the_image_src;?>" alt="<?php the_title(); ?>"/>
 		</a>
+                <?php the_content();?>
 	</div>	
 	<div class="span4 offset1">
 		<p class="caption text-right">
